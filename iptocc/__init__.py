@@ -8,6 +8,7 @@ import logging
 import os
 import sys
 import threading
+from typing import Union
 from functools import lru_cache
 from ipaddress import IPv4Address, IPv6Address, IPv6Network, ip_address
 from typing import Union, Tuple
@@ -27,7 +28,7 @@ pandas.set_option("display.max_columns", None)
 pandas.set_option("display.expand_frame_repr", False)
 
 lock = threading.Lock()
-_rir_database: pandas.DataFrame = None
+_rir_database: Union[pandas.DataFrame, None] = None
 _countries: dict = dict()
 
 
@@ -139,7 +140,7 @@ def ipv6_get_country_code(address: IPv6Address) -> str:
 
 
 def get_country_code(address: str) -> str:
-    address = ip_address(address)
+    address = ip_address(address) # type: ignore[assignment]
     if isinstance(address, IPv4Address):
         logger.info("%s is IPv4", address)
         return ipv4_get_country_code(address)

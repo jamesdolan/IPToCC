@@ -19,8 +19,10 @@ jobs:
     - name: Install Requirements
       run: |
         pip install -r requirements.txt
-        pip install flake8
+        pip install flake8 mypy
     - name: flake8
       run: flake8
+    - name: mypy
+      run: mypy iptocc
     - name: pytest
       run: python -m pytest
