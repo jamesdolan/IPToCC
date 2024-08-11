@@ -9,10 +9,10 @@ setup(
     ],
     package_data={
         "iptocc": [
-            "delegated-*",
+            "*.db",
             "*.csv",
         ],
     },
     python_requires='>=3.9',
-    install_requires=["pandas"],
+    install_requires=["pandas","zstandard"],
 )

@@ -38,6 +38,7 @@ country_code = get_country_code('<IPv4/IPv6 address>')
 ## Dependencies
 - Python 3.9+
 - [pandas](https://github.com/pandas-dev/pandas)
+- [zstandard](https://github.com/facebook/zstd)
 
 ## References
 - [RIR Statistics Exchange Format](https://www.apnic.net/about-apnic/corporate-documents/documents/resource-guidelines/rir-statistics-exchange-format/)

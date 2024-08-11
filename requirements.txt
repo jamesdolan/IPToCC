@@ -1,3 +1,4 @@
 pytest
 pandas
 pandas-stubs
+zstandard

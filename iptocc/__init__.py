@@ -9,12 +9,14 @@ import os
 import sys
 import threading
 from functools import lru_cache
-from ipaddress import IPv4Address, IPv6Address, IPv6Network, ip_address
-from typing import Union, Tuple
+from ipaddress import IPv4Address, IPv6Address, ip_address
+from typing import Union
 
 import pandas
 
 from iptocc.exceptions import CountryCodeNotFound, CountryNotFound
+
+IPTOCC_DIR = os.path.dirname(os.path.abspath(__file__))
 
 logging.basicConfig(
     stream=sys.stdout,
@@ -31,17 +33,6 @@ _rir_database: Union[pandas.DataFrame, None] = None
 _countries: dict = dict()
 
 
-def convert_to_ip_object(
-    row: dict,
-) -> Union[Tuple[IPv4Address, IPv4Address], Tuple[IPv6Network, str], Tuple[str, str]]:
-    if row["Type"] == "ipv4":
-        start = IPv4Address(row["Start"])
-        return start, start + int(row["Value"])
-    elif row["Type"] == "ipv6":
-        return IPv6Network(row["Start"] + "/" + row["Value"]), ""
-    return row["Start"], ""
-
-
 def load_rir_databases() -> None:
     get_rir_database()
 
@@ -53,22 +44,12 @@ def get_rir_database() -> pandas.DataFrame:
     if _rir_database is None:
         with lock:
             if _rir_database is None:
-                logger.info("Loading RIR databases")
-                _rir_database = pandas.concat(read_rir_databases())
-                _rir_database = _rir_database[
-                    (
-                        (_rir_database["Type"] == "ipv4")
-                        | (_rir_database["Type"] == "ipv6")
-                    )
-                    & (_rir_database["Type"] != "*")
-                ]
-                _rir_database[["Start", "End"]] = _rir_database.apply(
-                    convert_to_ip_object, axis=1, result_type="expand"
+                _rir_database = pandas.read_pickle(
+                    os.path.join(IPTOCC_DIR, "rir_database.db"),
+                    compression="zstd"
                 )
                 countries = pandas.read_csv(
-                    os.path.join(
-                        os.path.dirname(os.path.abspath(__file__)), "iso3166.csv"
-                    ),
+                    os.path.join(IPTOCC_DIR, "iso3166.csv"),
                     names=["country_code", "country_name"],
                 )
                 _countries = dict(
@@ -77,37 +58,7 @@ def get_rir_database() -> pandas.DataFrame:
                         countries["country_name"].values,
                     )
                 )
-                logger.info("RIR databases loaded")
     return _rir_database
-
-
-def read_rir_databases():
-    headers = [
-        "Registry",
-        "Country Code",
-        "Type",
-        "Start",
-        "Value",
-        "Date",
-        "Status",
-        "Extensions",
-    ]
-    iptocc_dir = os.path.dirname(os.path.abspath(__file__))
-    for rir_database in os.listdir(iptocc_dir):
-        if rir_database.startswith("delegated-") and rir_database.endswith(
-            "-extended-latest"
-        ):
-            rir_database_path = os.path.join(iptocc_dir, rir_database)
-            yield pandas.read_csv(
-                rir_database_path,
-                delimiter="|",
-                comment="#",
-                names=headers,
-                dtype=str,
-                keep_default_na=False,
-                na_values=[""],
-                encoding="utf-8",
-            )[4:]
 
 
 @lru_cache(maxsize=100000)
