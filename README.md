@@ -36,9 +36,8 @@ country_code = get_country_code('<IPv4/IPv6 address>')
 - ftp://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-latest
 
 ## Dependencies
+- Python 3.9+
 - [pandas](https://github.com/pandas-dev/pandas)
-- [ipaddress](https://github.com/phihag/ipaddress)
-- [backports.functools_lru_cache import lru_cache](https://github.com/jaraco/backports.functools_lru_cache)
 
 ## References
 - [RIR Statistics Exchange Format](https://www.apnic.net/about-apnic/corporate-documents/documents/resource-guidelines/rir-statistics-exchange-format/)

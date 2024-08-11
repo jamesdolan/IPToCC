@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+from setuptools import setup
+
+setup(
+    name="iptocc",
+    packages=[
+        "iptocc",
+    ],
+    package_data={
+        "iptocc": [
+            "delegated-*",
+            "*.csv",
+        ],
+    },
+    python_requires='>=3.9',
+    install_requires=["pandas"],
+)
