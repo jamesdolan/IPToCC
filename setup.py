@@ -14,5 +14,5 @@ setup(
         ],
     },
     python_requires='>=3.9',
-    install_requires=["pandas","zstandard"],
+    install_requires=["pandas", "zstandard"],
 )
