@@ -4,15 +4,9 @@
 # __credits__ = ["Ronie Martinez"]
 # __maintainer__ = "Ronie Martinez"
 # __email__ = "ronmarti18@gmail.com"
-import hashlib
 import os
 import threading
-
-try:
-    from urllib.request import urlopen, urlretrieve
-except ImportError:
-    # noinspection PyUnresolvedReferences
-    from urllib import urlopen, urlretrieve
+from urllib.request import urlretrieve
 
 
 def update_rir_database(rir_database_url):

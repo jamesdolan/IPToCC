@@ -17,6 +17,10 @@ jobs:
       with:
         python-version: 3.9
     - name: Install Requirements
-      run: pip install -r requirements.txt
+      run: |
+        pip install -r requirements.txt
+        pip install flake8
+    - name: flake8
+      run: flake8
     - name: pytest
       run: python -m pytest
