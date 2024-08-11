@@ -18,7 +18,7 @@ from iptocc.exceptions import CountryCodeNotFound, CountryNotFound
 
 logging.basicConfig(
     stream=sys.stdout,
-    level=logging.DEBUG,
+    level=logging.WARNING,
     format="%(asctime)s\t%(levelname)s\t%(module)s\t%(message)s",
 )
 logger = logging.getLogger("iptocc")
