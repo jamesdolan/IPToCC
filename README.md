@@ -3,8 +3,8 @@ Fork of [https://github.com/roniemartinez/IPToCC](https://github.com/roniemartin
 
 Get ISO country code of IPv4/IPv6 address. Address lookup is done locally.
 
-[![CI](https://github.com/jamesdolan/IPToCC-Live/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jamesdolan/IPToCC-Live/actions/workflows/ci.yml)
-[![Update](http://github.com)](https://github.com/jamesdolan/IPToCC-Live/actions/workflows/update.yml)
+[![CI](https://github.com/jamesdolan/IPToCC-Live/actions/workflows/ci.yml/badge.svg)](https://github.com/jamesdolan/IPToCC-Live/actions/workflows/ci.yml)
+[![Update](https://github.com/jamesdolan/IPToCC-Live/actions/workflows/update.yml/badge.svg)](https://github.com/jamesdolan/IPToCC-Live/actions/workflows/update.yml)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jamesdolan/IPToCC-Live/blob/master/LICENSE)
 
 ## Features
