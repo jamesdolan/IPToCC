@@ -18,23 +18,9 @@ except ImportError:
 def update_rir_database(rir_database_url):
     rir_database_path = os.path.join("iptocc", rir_database_url.split("/")[-1])
     try:
-        if os.path.isfile(rir_database_path):
-            hash_md5 = hashlib.md5()
-            calculate_hash(hash_md5, rir_database_path)
-            md5_text = urlopen(rir_database_url + ".md5").read().decode("utf-8")
-            calculated_md5 = hash_md5.hexdigest()
-            if not (
-                calculated_md5 != md5_text[-33:-1] or calculated_md5 != md5_text[:32]
-            ):
-                print("Updating RIR database: {}".format(rir_database_url))
-                urlretrieve(rir_database_url, filename=rir_database_path)
-                print("RIR database updated: {}".format(rir_database_url))
-            else:
-                print("RIR database is up-to-date: {}".format(rir_database_path))
-        else:
-            print("Downloading RIR database {}".format(rir_database_path))
-            urlretrieve(rir_database_url, filename=rir_database_path)
-            print("RIR database downloaded: {}".format(rir_database_url))
+        print("Downloading RIR database {}".format(rir_database_path))
+        urlretrieve(rir_database_url, filename=rir_database_path)
+        print("RIR database downloaded: {}".format(rir_database_url))
     except IOError:
         pass
 
