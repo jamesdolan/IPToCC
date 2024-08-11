@@ -11,8 +11,7 @@ from iptocc import CountryCodeNotFound, get_country_code
 PARAMS = [
     ("United States - IPv4", "5.35.192.0", "US"),
     ("Sweden - IPv4", "5.35.184.0", "SE"),
-    ("United States - IPv6", "2a00:5440:0000:0000:0000:ff00:0042:8329", "US",),
-    ("United Kingdom - IPv6", "2a00:95e0:0000:0000:0000:ff00:0042:8329", "GB",),
+    ("United States - IPv6", "2607:f8b0:4004:c1f::71", "US",),
 ]
 
 

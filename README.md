@@ -1,43 +1,10 @@
 # IPToCC
+Fork of [https://github.com/roniemartinez/IPToCC](https://github.com/roniemartinez/IPToCC) with the aim of being updated regularly.
 
- Get ISO country code of IPv4/IPv6 address. Address lookup is done locally.
+Get ISO country code of IPv4/IPv6 address. Address lookup is done locally.
 
-<table>
-    <tr>
-        <td>License</td>
-        <td><img src='https://img.shields.io/pypi/l/IPToCC.svg'></td>
-        <td>Version</td>
-        <td><img src='https://img.shields.io/pypi/v/IPToCC.svg'></td>
-    </tr>
-    <tr>
-        <td>Travis CI</td>
-        <td><img src='https://travis-ci.org/roniemartinez/IPToCC.svg?branch=master'></td>
-        <td>Coverage</td>
-        <td><img src='https://codecov.io/gh/roniemartinez/IPToCC/branch/master/graph/badge.svg'></td>
-    </tr>
-    <tr>
-        <td>AppVeyor</td>
-        <td><img src='https://ci.appveyor.com/api/projects/status/1xmd0gr278bhu090/branch/master?svg=true'></td>
-        <td>Supported versions</td>
-        <td><img src='https://img.shields.io/pypi/pyversions/IPToCC.svg'></td>
-    </tr>
-    <tr>
-        <td>Wheel</td>
-        <td><img src='https://img.shields.io/pypi/wheel/IPToCC.svg'></td>
-        <td>Implementation</td>
-        <td><img src='https://img.shields.io/pypi/implementation/IPToCC.svg'></td>
-    </tr>
-    <tr>
-        <td>Status</td>
-        <td><img src='https://img.shields.io/pypi/status/IPToCC.svg'></td>
-        <td>Downloads</td>
-        <td><img src='https://img.shields.io/pypi/dm/IPToCC.svg'></td>
-    </tr>
-    <tr>
-        <td>Show your support</td>
-        <td><a href='https://saythanks.io/to/roniemartinez'><img src='https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg'></a></td>
-    </tr>
-</table>
+[![CI](https://github.com/jamesdolan/IPToCC/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jamesdolan/IPToCC/actions/workflows/ci.yml)
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jamesdolan/IPToCC/blob/master/LICENSE)
 
 ## Features
 

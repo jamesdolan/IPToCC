@@ -25,7 +25,7 @@ logger = logging.getLogger("iptocc")
 
 pandas.set_option("display.max_columns", None)
 pandas.set_option("display.expand_frame_repr", False)
-pandas.set_option("max_colwidth", -1)
+#pandas.set_option("max_colwidth", -1)
 
 lock = threading.Lock()
 _rir_database: pandas.DataFrame = None

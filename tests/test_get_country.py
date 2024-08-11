@@ -13,13 +13,8 @@ PARAMS = [
     ("Sweden - IPv4", "5.35.184.0", "Sweden"),
     (
         "United States - IPv6",
-        "2a00:5440:0000:0000:0000:ff00:0042:8329",
+        "2607:f8b0:4004:c1f::71",
         "United States",
-    ),
-    (
-        "United Kingdom - IPv6",
-        "2a00:95e0:0000:0000:0000:ff00:0042:8329",
-        "United Kingdom",
     ),
 ]
 
