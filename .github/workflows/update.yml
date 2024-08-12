@@ -27,6 +27,6 @@ jobs:
       run: |
         git config --global user.email "noreply@github.com"
         git config --global user.name "Updater Bot"
-        git add iptocc/delegated-*
+        git add iptocc/
         git commit -m "Auto Update Database" || true
         git push
