@@ -1,5 +1,5 @@
 # IPToCC-Live
-DEPRECATED: Use [ip_to_country](https://github.com/jamesdolan/ip_to_country/blob/main/update.py) instead which is orders of magnitude faster!
+DEPRECATED: Use [ip_to_country](https://github.com/jamesdolan/ip_to_country) instead which is orders of magnitude faster!
 
 Fork of [https://github.com/roniemartinez/IPToCC](https://github.com/roniemartinez/IPToCC) that updates the databases [regularly](https://github.com/jamesdolan/IPToCC-Live/actions/workflows/update.yml).
 
